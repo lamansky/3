@@ -28,5 +28,5 @@ people.sort((a, b) => compare3Way(a.name, b.name)) // John, John, Stephen
 people.sort((a, b) => compare3Way(a.age, b.age)) // John, Stephen, John
 
 // Multi-level sort: First by name, then by age
-people.sort((a, b) => compare3Way(a.name, b.name, a.age, b.age)) // John (#2), Stephen, John (#1)
+people.sort((a, b) => compare3Way(a.name, b.name, a.age, b.age)) // John (#2), John (#1), Stephen
 ```
