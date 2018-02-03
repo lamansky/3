@@ -30,6 +30,16 @@ describe('threeWayCompare()', function () {
     assert.strictEqual(compare3('b', 'a'), 1)
   })
 
+  it('should return 1 if first string is blank and `emptyStringsLast` is true', function () {
+    assert.strictEqual(compare3('', 'a'), -1)
+    assert.strictEqual(compare3('', 'a', {emptyStringsLast: true}), 1)
+  })
+
+  it('should return -1 if second string is blank and `emptyStringsLast` is true', function () {
+    assert.strictEqual(compare3('a', ''), 1)
+    assert.strictEqual(compare3('a', '', {emptyStringsLast: true}), -1)
+  })
+
   it('should return 0 if strings are equal', function () {
     assert.strictEqual(compare3('test', 'test'), 0)
   })
